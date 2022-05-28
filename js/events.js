@@ -1,4 +1,5 @@
 const declareViewEvent = () => {
+      //------search button
   document.querySelector("#search_btn").addEventListener("click", () => {
     let val = document.querySelector("#search_input").value;
       let url = `https://deezerdevs-deezer.p.rapidapi.com/search?rapidapi-key=0553c29e4bmsh3a239d5a07dbdb4p1e9ae1jsnc9399dacde13&q=${val}`;
@@ -29,9 +30,11 @@ const declareViewEvent = () => {
           }
         });
   });
+      //------close search
   document.querySelector(".close").addEventListener("click", () => {
     document.querySelector("#search_input").value = "";
   });
+      //------sort songs
   document.querySelector("#sort_select").addEventListener("change", () => {
     let sortVal = document.querySelector("#sort_select").value;
     let res = [];
@@ -55,6 +58,7 @@ const declareViewEvent = () => {
     document.querySelector("#bar_title").innerHTML = "";
     renderAllSongs(res);
   });
+      //------orderBy
   document.querySelector("#order").addEventListener("click", () => {
     if (orderBy) {
       orderBy = false;
